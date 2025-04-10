@@ -1,0 +1,180 @@
+/* UnitConverter.css */
+
+/* 整體畫面置中用 Flex 包住整個 body */
+body {
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: #2e3440;
+  box-sizing: border-box;
+}
+
+/* 容器樣式 */
+.converter-container {
+  display: inline-block;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  background-color: #eceff4;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #2e3440;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+input,
+select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #2e3440;
+  transition: border-color 0.3s;
+  max-width: 160px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5'%3E%3Cpath fill='%232e3440' d='M0 0l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 0.65rem auto;
+  padding-right: 2rem;
+}
+
+input:focus,
+select:focus {
+  border-color: #5e81ac;
+  outline: none;
+}
+
+.form span {
+  color: #4c566a;
+  font-weight: bold;
+}
+
+button {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #5e81ac;
+  color: white;
+  white-space: nowrap;
+}
+
+button.reset {
+  background-color: #a3be8c;
+}
+
+button:hover {
+  background-color: #4c7399;
+}
+
+.reset:hover {
+  background-color: #8fbc8f;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #2e8b57;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.error {
+  color: #bf616a;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.history {
+  margin-top: 1.5rem;
+  color: #2e3440;
+}
+
+.history h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.history ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.history li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.history li .actions {
+  display: none;
+  gap: 0.25rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.history li:hover .actions {
+  display: flex;
+}
+
+.history li button {
+  background-color: transparent;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.history li button.delete {
+  color: #bf616a;
+}
+
+.history li button.pin {
+  color: #5e81ac;
+}
+
+.history li button:hover {
+  background-color: #e5e9f0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
